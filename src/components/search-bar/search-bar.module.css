@@ -1,0 +1,26 @@
+.search_bar {
+  width: 80%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input_wrapper {
+  width: 100%;
+  position: relative;
+  border-radius: 20px;
+}
+
+.magnifier_icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search_bar__input {
+  width: 100%;
+  border-radius: 20px;
+  padding: 10px 30px;
+}
