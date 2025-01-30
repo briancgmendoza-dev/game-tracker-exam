@@ -1,7 +1,8 @@
 export type TRootState = {
-  data: TGame[] | null;
+  data: TGame[] | TCategories[] | null;
   status: string;
   error: string;
+  categories?: string[]
 }
 
 export type TGame = {
@@ -22,3 +23,5 @@ export type TGetGamesParams = {
   category?: string
   sortBy?: 'release-date' | 'alphabetical' | 'relevance'
 }
+
+export type TCategories = string[]

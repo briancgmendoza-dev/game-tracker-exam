@@ -4,7 +4,6 @@ import { TGetGamesParams } from '../types';
 const initialState: TGetGamesParams = {
   searchTerm: '',
   platform: '',
-  category: '',
   sortBy: 'release-date'
 };
 
@@ -18,14 +17,15 @@ const SearchSlice = createSlice({
     setPlatform: (state, action: PayloadAction<string>) => {
       state.platform = action.payload
     },
-    setCategory: (state, action: PayloadAction<string>) => {
-      state.category = action.payload
-    },
     setSortBy: (state, action: PayloadAction<'release-date' | 'alphabetical' | 'relevance'>) => {
       state.sortBy = action.payload
     }
   },
 });
 
-export const { setSearchTerm } = SearchSlice.actions;
+export const {
+  setSearchTerm,
+  setPlatform,
+  setSortBy
+} = SearchSlice.actions;
 export default SearchSlice.reducer;

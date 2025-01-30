@@ -22,11 +22,11 @@ export default function SearchBar() {
 
   useEffect(() => {
     if (debouncedSearchTerm !== searchTerm) {
-      dispatch(setSearchTerm(debouncedSearchTerm));
+      dispatch(setSearchTerm(debouncedSearchTerm ?? ''));
     }
   }, [debouncedSearchTerm, dispatch, searchTerm])
 
-  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const value = event.target.value;
     setInputValue(value)
   };

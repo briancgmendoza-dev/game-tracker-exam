@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 
 import { getRequest } from "../service/request"
-import { TGame, TGetGamesParams } from "../types"
+import { TGame, TGetGamesParams, TCategories } from "../types"
 
 export const getGames = createAsyncThunk<TGame[], TGetGamesParams, { rejectValue: string }>(
   "data/getGames", async ({ searchTerm, platform, category, sortBy }, thunkAPI) => {
@@ -24,5 +24,15 @@ export const getGames = createAsyncThunk<TGame[], TGetGamesParams, { rejectValue
     } catch (error) {
       console.log("Error in FE [app.get(/games)]", error)
       return thunkAPI.rejectWithValue("Error in fetching games")
+    }
+})
+
+export const getCategories = createAsyncThunk<TCategories[], void, { rejectValue: string }>(
+  "data/getCategories", async (_, thunkAPI) => {
+    try {
+      return await getRequest('/categories')
+    } catch (error) {
+      console.log("Error in FE [app.get(/categories)]", error)
+      return thunkAPI.rejectWithValue("Error in fetching categories")
     }
 })
