@@ -1,5 +1,5 @@
 export type TRootState = {
-  data: TGame[] | TCategories[] | null;
+  data: TGame[] | TCategories[] | null; // TODO: Getting error due to TCategories[]
   status: string;
   error: string;
   categories?: string[]
