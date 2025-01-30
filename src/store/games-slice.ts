@@ -10,7 +10,7 @@ const initialState: TRootState = {
 }
 
 const GamesSlice = createSlice({
-  name: "Add User",
+  name: "games",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
