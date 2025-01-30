@@ -1,6 +1,7 @@
 import { THeading } from "./type";
 
 import styles from "./heading.module.css"
+import React from "react";
 
 const Heading: React.FC<THeading> = ({ text }) => {
   return (
@@ -8,4 +9,10 @@ const Heading: React.FC<THeading> = ({ text }) => {
   )
 }
 
-export default Heading
+const SubHeading: React.FC<THeading> = ({ text }) => {
+  return (
+    <h2 className={styles.sub_heading}>{text}</h2>
+  )
+}
+
+export { Heading, SubHeading }
