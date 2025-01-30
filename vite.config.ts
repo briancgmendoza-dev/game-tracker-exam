@@ -7,11 +7,13 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'https://api.dev.cloud.barbooksaustralia.com', // Using env doesn't work either
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, '')
       }
-    }
+    },
+    port: 3000,
+    open: true
   }
 })

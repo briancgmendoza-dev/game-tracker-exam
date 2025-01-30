@@ -1,18 +1,31 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { TGetGamesParams } from '../types';
 
-const initialState = {
+const initialState: TGetGamesParams = {
   searchTerm: '',
+  platform: '',
+  sortBy: 'release-date'
 };
 
 const SearchSlice = createSlice({
   name: 'search',
   initialState,
   reducers: {
-    setSearchTerm: (state, action) => {
+    setSearchTerm: (state, action: PayloadAction<string>) => {
       state.searchTerm = action.payload;
+    },
+    setPlatform: (state, action: PayloadAction<string>) => {
+      state.platform = action.payload
+    },
+    setSortBy: (state, action: PayloadAction<'release-date' | 'alphabetical' | 'relevance'>) => {
+      state.sortBy = action.payload
     }
   },
 });
 
-export const { setSearchTerm } = SearchSlice.actions;
+export const {
+  setSearchTerm,
+  setPlatform,
+  setSortBy
+} = SearchSlice.actions;
 export default SearchSlice.reducer;
