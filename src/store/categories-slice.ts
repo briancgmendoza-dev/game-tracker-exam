@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 import { getCategories } from "./thunk";
-import { TRootState } from "../types";
+import { TRootState, TCategories } from "../types";
 
-const initialState: TRootState  = {
+const initialState: TRootState<TCategories>  = {
   data: [],
   status: "idle",
   error: "",

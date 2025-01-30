@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 import { getGames } from "./thunk";
-import { TRootState } from "../types";
+import { TRootState, TGame } from "../types";
 
-const initialState: TRootState = {
-  data: null,
+const initialState: TRootState<TGame[]> = {
+  data: [],
   status: "idle",
   error: ""
 }

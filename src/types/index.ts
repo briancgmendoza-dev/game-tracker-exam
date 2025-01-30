@@ -1,8 +1,7 @@
-export type TRootState = {
-  data: TGame[] | TCategories[] | null; // TODO: Getting error due to TCategories[]
+export type TRootState<T> = {
+  data: T | null
   status: string;
   error: string;
-  categories?: string[]
 }
 
 export type TGame = {
@@ -15,6 +14,26 @@ export type TGame = {
   publisher: string
   developer: string
   releaseDate: string
+}
+
+export type TGameDetailed = TGame & {
+  description: string
+  minimumSystemRequirements: TGameMinimumSystemRequirements
+  screenshots: TGameScreenshot[]
+  status: string
+}
+
+export type TGameMinimumSystemRequirements = {
+  graphics: string
+  memory: string
+  os: string
+  processor: string
+  storage: string
+}
+
+type TGameScreenshot = {
+  id: number
+  image: string
 }
 
 export type TGetGamesParams = {
