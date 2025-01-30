@@ -20,7 +20,7 @@ const SelectOptions: React.FC<TSelectOption> = ({ selectorValue, onChange, optio
           }),
           control: (provided: any) => ({
             ...provided,
-            width: "150px"
+            width: text === "Filter by Category" ? "250px" : "150px"
           })
         }}
       />

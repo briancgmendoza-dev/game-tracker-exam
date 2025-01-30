@@ -1,12 +1,11 @@
-import Select, { MultiValue } from "react-select"
+import SelectOptions from "../../select-options"
 
 import { useAppDispatch, useAppSelector } from "../../../store"
-import { setSelectedCategories as setCategories } from "../../../store/categories-slice"
+import { setCategory } from "../../../store/query-slice"
 
 import styles from "./filter-by-category.module.css"
-import { useState } from "react"
 
-const categoryOptions = [
+const options = [
   "mmorpg",
   "shooter",
   "strategy",
@@ -56,36 +55,27 @@ const categoryOptions = [
 
 export default function FilterByCategory() {
   const dispatch = useAppDispatch()
-  const { categories } = useAppSelector((state) => state.categories)
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([])
+  const { category } = useAppSelector((state) => state.query)
 
-  const handleOnChange = (selected: MultiValue<string>) => {
-    const selectedValues = selected.map((item) => (typeof item === 'string' ? item : item['value']))
-    setSelectedCategories((prevSelected) => [...prevSelected, ...selectedValues])
+  const formattedOptions = options.map(option => ({
+    value: option,
+    label: option.charAt(0).toUpperCase() + option.slice(1).replace('-', ' ')  // Capitalize first letter and replace hyphen with space
+  }));
 
-    dispatch(setCategories(selectedCategories))
+  const handleOnChange = (newValue: { value: string } | null) => {
+    if (newValue) {
+      dispatch(setCategory(newValue.value))
+    }
   }
 
   return (
-    <div className={styles.filter_by_container}>
-      <p>Filter by Category</p>
-      <Select
-        isMulti
-        value={categories}
-        onChange={handleOnChange}
-        options={categoryOptions.map((category) => ({ label: category, value: category }))}
-        placeholder="Start typing..."
-        // getOptionLabel={(e) => e.label}
-        // getOptionValue={(e) => e.value}
-        isClearable
-        closeMenuOnSelect={false}
-        styles={{
-          option: (provided: any) => ({
-            ...provided,
-            color: '#000'
-          })
-        }}
-      />
-    </div>
+    <SelectOptions
+      selectorValue={category ?? ''}
+      onChange={handleOnChange}
+      options={formattedOptions}
+      placeholder="Start typing..."
+      text="Filter by Category"
+      className={styles.filter_by_category__container}
+    />
   )
 }

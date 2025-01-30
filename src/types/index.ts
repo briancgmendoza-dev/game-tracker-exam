@@ -42,5 +42,3 @@ export type TGetGamesParams = {
   category?: string
   sortBy?: 'release-date' | 'alphabetical' | 'relevance'
 }
-
-export type TCategories = string[]

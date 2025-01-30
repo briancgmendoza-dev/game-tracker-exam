@@ -3,12 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 import { useAppDispatch, useAppSelector } from "../../store";
-import { setSearchTerm } from "../../store/search-slice";
+import { setSearchTerm } from "../../store/query-slice";
 import styles from "./search-bar.module.css"
 
 export default function SearchBar() {
   const dispatch = useAppDispatch()
-  const { searchTerm } = useAppSelector((state) => state.search)
+  const { searchTerm } = useAppSelector((state) => state.query)
   const [inputValue, setInputValue] = useState(searchTerm)
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState(searchTerm)
 

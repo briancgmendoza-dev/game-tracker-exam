@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 
 import { getRequest } from "../service/request"
-import { TGame, TGetGamesParams, TCategories, TGameDetailed } from "../types"
+import { TGame, TGetGamesParams, TGameDetailed } from "../types"
 
 export const getGames = createAsyncThunk<TGame[], TGetGamesParams, { rejectValue: string }>(
   "data/getGames", async ({ searchTerm, platform, category, sortBy }, thunkAPI) => {
@@ -37,7 +37,7 @@ export const getGame = createAsyncThunk<TGameDetailed, string, { rejectValue: st
     }
 })
 
-export const getCategories = createAsyncThunk<TCategories[], void, { rejectValue: string }>(
+export const getCategories = createAsyncThunk<string[], void, { rejectValue: string }>(
   "data/getCategories", async (_, thunkAPI) => {
     try {
       return await getRequest('/categories')

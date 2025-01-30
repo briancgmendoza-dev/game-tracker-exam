@@ -1,12 +1,8 @@
-.filter_by_container {
-  width: 300px;
+.filter_by_category__container {
+  width: 400px;
   max-width: 500px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.filter_by_container option {
-  color: #000;
 }
