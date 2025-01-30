@@ -2,13 +2,13 @@ import SelectOptions from "../../select-options"
 import Paragraphs from "../../paragraphs"
 
 import { useAppDispatch, useAppSelector } from "../../../store"
-import { setSortBy } from "../../../store/search-slice"
+import { setSortBy } from "../../../store/query-slice"
 
 import styles from "./sort-by.module.css"
 
 export default function SortBy() {
   const dispatch = useAppDispatch()
-  const { sortBy } = useAppSelector((state) => state.search)
+  const { sortBy } = useAppSelector((state) => state.query)
 
   const options = [
     { value: 'release-date', label: 'Release Date' },

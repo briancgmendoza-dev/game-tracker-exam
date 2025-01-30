@@ -1,23 +1,18 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit"
 
 import { getCategories } from "./thunk";
-import { TRootState, TCategories } from "../types";
+import { TRootState } from "../types";
 
-const initialState: TRootState<TCategories>  = {
+const initialState: TRootState<string[]>  = {
   data: [],
   status: "idle",
   error: "",
-  categories: []
 }
 
 const CategoriesSlice = createSlice({
   name: "categories",
   initialState,
-  reducers: {
-    setSelectedCategories: (state, action: PayloadAction<string[]>) => {
-      state.categories = action.payload
-    }
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(getCategories.pending, (state) => {
@@ -35,5 +30,4 @@ const CategoriesSlice = createSlice({
 })
 
 export { getCategories }
-export const { setSelectedCategories } = CategoriesSlice.actions;
 export default CategoriesSlice.reducer

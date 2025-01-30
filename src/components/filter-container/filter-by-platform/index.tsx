@@ -1,12 +1,12 @@
 import SelectOptions from "../../select-options"
 import { useAppDispatch, useAppSelector } from "../../../store"
-import { setPlatform } from "../../../store/search-slice"
+import { setPlatform } from "../../../store/query-slice"
 
 import styles from "./filter-by-platform.module.css"
 
 export default function FilterByPlatform() {
   const dispatch = useAppDispatch()
-  const { platform } = useAppSelector((state) => state.search)
+  const { platform } = useAppSelector((state) => state.query)
   const options = [
     { value: 'all', label: 'All' },
     { value: 'pc', label: 'PC' },
