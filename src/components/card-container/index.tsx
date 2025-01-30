@@ -1,13 +1,15 @@
-import { useAppSelector } from "../../store"
+import Loading from "../loading"
 import Card from "./card"
 import styles from './card-container.module.css'
+
+import { useAppSelector } from "../../store"
 
 export default function CardContainer() {
   const { data, status, error } = useAppSelector((state) => state.games)
 
   return (
     <div className={styles.card__container}>
-      {status === 'loading' && <p>Loading...</p>}
+      {status === 'loading' && <Loading />}
       {status === 'failed' && <p>{error}</p>}
       {status === 'succeeded' && data?.map((card) => (
         <Card
