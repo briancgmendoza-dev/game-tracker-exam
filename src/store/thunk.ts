@@ -1,12 +1,20 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 
 import { getRequest } from "../service/request"
-import { TGame } from "../types"
+import { TGame, TGetGamesParams } from "../types"
 
-export const getGames = createAsyncThunk<TGame[], string, { rejectValue: string }>(
-  "data/getGames", async (searchTerm, thunkAPI) => {
+export const getGames = createAsyncThunk<TGame[], TGetGamesParams, { rejectValue: string }>(
+  "data/getGames", async ({ searchTerm, platform, category, sortBy }, thunkAPI) => {
     try {
-      let response = await getRequest("/games")
+      const queryParams: Record<string, string> = {}
+
+      if (platform) queryParams.platform = platform
+      if (category) queryParams.category = category
+      if (sortBy) queryParams['sort-by'] = sortBy
+
+      const queryString = new URLSearchParams(queryParams).toString()
+
+      let response = await getRequest(`/games?${queryString}`)
 
       if (searchTerm) {
         response = response.filter((game: { title: string }) => game.title.toLowerCase().includes(searchTerm.toLowerCase()))

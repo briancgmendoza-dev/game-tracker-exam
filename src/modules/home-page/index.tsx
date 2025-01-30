@@ -9,11 +9,16 @@ import HeroMessage from "../../components/hero-message";
 
 export default function HomePage() {
   const dispatch = useAppDispatch()
-  const { searchTerm } = useAppSelector((state) => state.search)
+  const { searchTerm, platform, category, sortBy } = useAppSelector((state) => state.search)
 
   useEffect(() => {
-    dispatch(getGames(searchTerm))
-  }, [dispatch, searchTerm])
+    dispatch(getGames({
+      searchTerm: searchTerm ?? '',
+      platform: platform ?? '',
+      category: category ?? '',
+      sortBy: sortBy ?? 'release-date'
+    }))
+  }, [dispatch, searchTerm, platform, category, sortBy])
 
   return (
     <section>
