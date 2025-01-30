@@ -2,7 +2,6 @@
 
 ## Cloning the project
 
-Screenshot:
 ![image](https://github.com/user-attachments/assets/fb19dc81-eb42-4ed5-aed1-249cc019be13)
 
 Open up your terminal or vscodes' terminal then do the ff:
@@ -22,3 +21,9 @@ In order for the APIs to work, do the ff:
 VITE_EXAM_API_URL={{Add the API here}}
 VITE_IMAGE_URL={{Add the API here without the /api}}
 ```
+
+## Available commands
+1. npm run dev -> to run the project locally.
+2. npm run test -> to run vitest locally.
+3. npm run build -> to build a deployable version of the project.
+4. npm run link -> to check for linting error
