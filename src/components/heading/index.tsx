@@ -1,10 +1,10 @@
 import { THeading } from "./type";
 
+import styles from "./heading.module.css"
+
 const Heading: React.FC<THeading> = ({ text }) => {
   return (
-    <h1>
-      {text}
-    </h1>
+    <h1 className={styles.heading}>{text}</h1>
   )
 }
 
