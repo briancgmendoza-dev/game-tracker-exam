@@ -1,7 +1,7 @@
-import Select from "react-select"
-
+import SelectOptions from "../../select-options"
 import { useAppDispatch, useAppSelector } from "../../../store"
 import { setPlatform } from "../../../store/search-slice"
+
 import styles from "./filter-by-platform.module.css"
 
 export default function FilterByPlatform() {
@@ -20,24 +20,13 @@ export default function FilterByPlatform() {
   }
 
   return (
-    <div className={styles.select_container}>
-      <p>Filter by Platform</p>
-      <Select
-        value={options.find((option) => option.value === platform) || null}
-        onChange={handleOnChange}
-        options={options}
-        placeholder="All"
-        styles={{
-          option: (provided: any) => ({
-            ...provided,
-            color: "#000",
-          }),
-          control: (provided: any) => ({
-            ...provided,
-            width: "150px"
-          })
-        }}
-      />
-    </div>
+    <SelectOptions
+      selectorValue={platform ?? ''}
+      onChange={handleOnChange}
+      options={options}
+      placeholder="All"
+      text="Filter by Platform"
+      className={styles.filter_by_platform__container}
+    />
   )
 }

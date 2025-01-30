@@ -1,15 +1,18 @@
+import { useEffect } from "react"
 import { useParams } from "react-router"
+
+import { Heading } from "../../components/heading"
 import HeroMessage from "../../components/hero-message"
 import Thumbnail from "../../components/thumbnail"
 import Button from "../../components/button"
+import GameInfo from "../../components/game-info"
+import Loading from "../../components/loading"
+import SystemRequirements from "../../components/system-requirements"
 
-import styles from "./details-page.module.css"
-import { useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "../../store"
 import { getGame } from "../../store/thunk"
-import SystemRequirements from "../../components/system-requirements"
-import { Heading } from "../../components/heading"
-import GameInfo from "../../components/game-info"
+
+import styles from "./details-page.module.css"
 
 export default function DetailsPage() {
   const params = useParams()
@@ -23,7 +26,7 @@ export default function DetailsPage() {
   return (
     <section>
       <HeroMessage />
-      {status === "loading" && <p>Loading...</p>}
+      {status === "loading" && <Loading />}
       {status === "failed" && <p>{error}</p>}
       {status === "succeeded" && game && (
         <>
@@ -31,7 +34,7 @@ export default function DetailsPage() {
             <Thumbnail src={game?.thumbnail} alt={game?.title} />
             <div className={styles.details_page__information}>
               <div>
-                <Heading text="Requirements" />
+                <Heading text="Requirements" type="h1" />
                 <SystemRequirements
                   graphics={game?.minimumSystemRequirements?.graphics}
                   memory={game?.minimumSystemRequirements?.memory}

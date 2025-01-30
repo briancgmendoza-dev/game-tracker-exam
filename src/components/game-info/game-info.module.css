@@ -1,4 +1,4 @@
-.game_info_container {
+.game_info__container {
   width: 70%;
   display: flex;
   flex-direction: column;
@@ -7,6 +7,6 @@
   margin-inline: auto;
 }
 
-.game_info_paragraph {
+.game_info__paragraph {
   font-size: 12px;
 }

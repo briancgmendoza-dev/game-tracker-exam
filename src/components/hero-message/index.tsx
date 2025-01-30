@@ -1,11 +1,11 @@
-import { Heading, SubHeading } from "../heading"
+import { Heading } from "../heading"
 
 const HeroMessage = () => {
   return (
-    <div>
-      <Heading text="Find & Track the best free-to-play games!" />
-      <SubHeading text="Search for what to play next!" />
-    </div>
+    <>
+      <Heading text="Find & Track the best free-to-play games!" type="h1"/>
+      <Heading text="Search for what to play next!" type="h2" />
+    </>
   )
 }
 
