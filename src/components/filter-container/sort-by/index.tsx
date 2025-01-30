@@ -1,6 +1,6 @@
-import Select from "react-select"
-
+import SelectOptions from "../../select-options"
 import Paragraphs from "../../paragraphs"
+
 import { useAppDispatch, useAppSelector } from "../../../store"
 import { setSortBy } from "../../../store/search-slice"
 
@@ -22,24 +22,13 @@ export default function SortBy() {
       }
     }
   return (
-    <div className={styles.sort_by__container}>
-      <Paragraphs content="Sort By" />
-      <Select
-        value={options.find((option) => option.value === sortBy) || null}
-        onChange={handleOnChange}
-        options={options}
-        placeholder="All"
-        styles={{
-          option: (provided: any) => ({
-            ...provided,
-            color: "#000",
-          }),
-          control: (provided: any) => ({
-            ...provided,
-            width: "150px"
-          })
-        }}
-      />
-    </div>
+    <SelectOptions
+      selectorValue={sortBy ?? ''}
+      onChange={handleOnChange}
+      options={options}
+      placeholder="All"
+      text="Sort By"
+      className={styles.sort_by__container}
+    />
   )
 }

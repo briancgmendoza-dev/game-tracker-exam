@@ -1,9 +1,8 @@
-import Select from "react-select"
-
+import SelectOptions from "../../select-options"
 import { useAppDispatch, useAppSelector } from "../../../store"
 import { setPlatform } from "../../../store/search-slice"
+
 import styles from "./filter-by-platform.module.css"
-import Paragraphs from "../../paragraphs"
 
 export default function FilterByPlatform() {
   const dispatch = useAppDispatch()
@@ -21,24 +20,13 @@ export default function FilterByPlatform() {
   }
 
   return (
-    <div className={styles.filter_by_platform__container}>
-      <Paragraphs content="Filter by Platform" />
-      <Select
-        value={options.find((option) => option.value === platform) || null}
-        onChange={handleOnChange}
-        options={options}
-        placeholder="All"
-        styles={{
-          option: (provided: any) => ({
-            ...provided,
-            color: "#000",
-          }),
-          control: (provided: any) => ({
-            ...provided,
-            width: "150px"
-          })
-        }}
-      />
-    </div>
+    <SelectOptions
+      selectorValue={platform ?? ''}
+      onChange={handleOnChange}
+      options={options}
+      placeholder="All"
+      text="Filter by Platform"
+      className={styles.filter_by_platform__container}
+    />
   )
 }
