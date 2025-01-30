@@ -2,7 +2,17 @@ import SearchBar from "../../components/search-bar";
 import FilterContainer from "../../components/filter-container";
 import CardContainer from "../../components/card-container";
 
+import { useAppDispatch } from "../../store";
+import { useEffect } from "react";
+import { getGames } from "../../store/thunk";
+
 export default function HomePage() {
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(getGames())
+  }, [dispatch])
+
   return (
     <section>
       <div>

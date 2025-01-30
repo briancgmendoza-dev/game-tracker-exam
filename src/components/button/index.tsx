@@ -13,7 +13,11 @@ const Button: React.FC<TButton> = ({ url, label }) => {
   }
 
   return (
-    <button onClick={handleClick}>{label !== 'Back' ?  <span> View More &gt; </span> :  <span> &lt; Back </span>}</button>
+    <button
+      onClick={handleClick}
+    >
+      {label !== 'Back' ?  <span> View More &gt; </span> :  <span> &lt; Back </span>}
+    </button>
   )
 }
 
