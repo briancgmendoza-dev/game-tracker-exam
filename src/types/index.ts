@@ -15,3 +15,10 @@ export type TGame = {
   developer: string
   releaseDate: string
 }
+
+export type TGetGamesParams = {
+  searchTerm?: string
+  platform?: string
+  category?: string
+  sortBy?: 'release-date' | 'alphabetical' | 'relevance'
+}
