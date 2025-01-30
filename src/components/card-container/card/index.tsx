@@ -1,6 +1,6 @@
 import { TCard } from "./type";
 
-import Heading from "../../heading";
+import { Heading } from "../../heading";
 import Paragraphs from "../../paragraphs";
 import Thumbnail from "../../thumbnail";
 import Button from "../../button";
