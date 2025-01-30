@@ -1,8 +1,8 @@
 import Select from "react-select"
 
+import Paragraphs from "../../paragraphs"
 import { useAppDispatch, useAppSelector } from "../../../store"
 import { setSortBy } from "../../../store/search-slice"
-import { removeHypen } from "../../../helper"
 
 import styles from "./sort-by.module.css"
 
@@ -22,8 +22,8 @@ export default function SortBy() {
       }
     }
   return (
-    <div className={styles.sort_by_container}>
-      <p>Sort By</p>
+    <div className={styles.sort_by__container}>
+      <Paragraphs content="Sort By" />
       <Select
         value={options.find((option) => option.value === sortBy) || null}
         onChange={handleOnChange}

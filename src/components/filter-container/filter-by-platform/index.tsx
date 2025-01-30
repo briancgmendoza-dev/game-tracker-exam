@@ -3,6 +3,7 @@ import Select from "react-select"
 import { useAppDispatch, useAppSelector } from "../../../store"
 import { setPlatform } from "../../../store/search-slice"
 import styles from "./filter-by-platform.module.css"
+import Paragraphs from "../../paragraphs"
 
 export default function FilterByPlatform() {
   const dispatch = useAppDispatch()
@@ -20,8 +21,8 @@ export default function FilterByPlatform() {
   }
 
   return (
-    <div className={styles.select_container}>
-      <p>Filter by Platform</p>
+    <div className={styles.filter_by_platform__container}>
+      <Paragraphs content="Filter by Platform" />
       <Select
         value={options.find((option) => option.value === platform) || null}
         onChange={handleOnChange}

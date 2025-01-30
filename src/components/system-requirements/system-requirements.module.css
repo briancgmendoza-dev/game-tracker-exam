@@ -1,11 +1,11 @@
-.system_requirements_container {
+.system_requirements__container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-evenly;
 }
 
-.system_requirements_paragraph {
+.system_requirements__paragraph {
   font-size: 12px;
   text-align: start;
 }

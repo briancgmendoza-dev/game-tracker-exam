@@ -1,25 +1,26 @@
-import { SubHeading } from "../heading"
+import { Heading } from "../heading"
 import { TGameMinimumSystemRequirements } from "../../types"
 
 import styles from "./system-requirements.module.css"
+import Paragraphs from "../paragraphs"
 
 const SystemRequirements: React.FC<TGameMinimumSystemRequirements> = ({ graphics, memory, os, processor, storage }) => {
   return (
-    <div className={styles.system_requirements_container}>
-      <SubHeading text="Graphics" />
-      <p className={styles.system_requirements_paragraph}>{graphics}</p>
+    <div className={styles.system_requirements__container}>
+      <Heading text="Graphics" type="h2"/>
+      <Paragraphs content={graphics} className={styles.system_requirements__paragraph}/>
 
-      <SubHeading text="Memory" />
-      <p className={styles.system_requirements_paragraph}>{memory}</p>
+      <Heading text="Memory" type="h2"/>
+      <Paragraphs content={memory} className={styles.system_requirements__paragraph} />
 
-      <SubHeading text="Operating System" />
-      <p className={styles.system_requirements_paragraph}>{os}</p>
+      <Heading text="Operating System" type="h2"/>
+      <Paragraphs content={os} className={styles.system_requirements__paragraph} />
 
-      <SubHeading text="Processor" />
-      <p className={styles.system_requirements_paragraph}>{processor}</p>
+      <Heading text="Processor" type="h2"/>
+      <Paragraphs content={processor} className={styles.system_requirements__paragraph} />
 
-      <SubHeading text="Storage" />
-      <p className={styles.system_requirements_paragraph}>{storage}</p>
+      <Heading text="Storage" type="h2"/>
+      <Paragraphs content={storage} className={styles.system_requirements__paragraph} />
     </div>
   )
 }

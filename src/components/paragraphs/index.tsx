@@ -1,8 +1,8 @@
 import { TParagraphs } from "./type";
 
-const Paragraphs: React.FC<TParagraphs> = ({ content }) => {
+const Paragraphs: React.FC<TParagraphs> = ({ content, className }) => {
   return (
-    <p>
+    <p className={className}>
       {content}
     </p>
   )

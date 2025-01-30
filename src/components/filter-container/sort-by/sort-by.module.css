@@ -1,11 +1,7 @@
-.sort_by_container {
+.sort_by__container {
   width: 230px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.sort_select {
-  text-transform: capitalize;
 }

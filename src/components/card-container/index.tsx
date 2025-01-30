@@ -6,7 +6,7 @@ export default function CardContainer() {
   const { data, status, error } = useAppSelector((state) => state.games)
 
   return (
-    <div className={styles.card_container}>
+    <div className={styles.card__container}>
       {status === 'loading' && <p>Loading...</p>}
       {status === 'failed' && <p>{error}</p>}
       {status === 'succeeded' && data?.map((card) => (
