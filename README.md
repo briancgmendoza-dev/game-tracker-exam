@@ -23,6 +23,12 @@ VITE_EXAM_API_URL={{Add the API here}}
 VITE_IMAGE_URL={{Add the API here without the /api}}
 ```
 
+## To run the project
+- Note: The .env file with correct values
+```js
+npm run dev
+```
+
 ## Answers to questions
 
 - **What kind of libraries is your project using?**
