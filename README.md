@@ -2,6 +2,7 @@
 
 ## Cloning the project
 
+- ** Screenshot
 ![image](https://github.com/user-attachments/assets/fb19dc81-eb42-4ed5-aed1-249cc019be13)
 
 Open up your terminal or vscodes' terminal then do the ff:
@@ -51,3 +52,12 @@ VITE_IMAGE_URL={{Add the API here without the /api}}
 3. Multiple categories can be added (eg. tags).   /filter?tag=3d.mmorpg.fantasy.pvp&platform=pc
 4. The state of the filter must remains when navigating between pages.
 5. Unit test
+
+## Showcase
+- ** Homepage
+- ![image](https://github.com/user-attachments/assets/c479d3b4-6e8a-4664-888f-274b804449f6)
+
+- ** DetailedPage
+- ![image](https://github.com/user-attachments/assets/87a325fb-5e15-4f7b-acf8-7eac8a167aab)
+
+
