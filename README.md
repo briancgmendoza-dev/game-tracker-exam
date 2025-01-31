@@ -3,7 +3,7 @@
 ## Cloning the project
 
 - **Screenshot**
-![image](https://github.com/user-attachments/assets/fb19dc81-eb42-4ed5-aed1-249cc019be13)
+- ![image](https://github.com/user-attachments/assets/fb19dc81-eb42-4ed5-aed1-249cc019be13)
 
 Open up your terminal or vscodes' terminal then do the ff:
 1. From this page, locate the green button that says "Code"
