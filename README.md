@@ -14,7 +14,7 @@ Open up your terminal or vscodes' terminal then do the ff:
 ## ENV Values
 
 In order for the APIs to work, do the ff:
-1. Create .env file inside src folder
+1. Create .env file outside src folder
 2. Then add the values below:
 
 ```js
