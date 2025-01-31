@@ -13,5 +13,9 @@ render(
 // TODO: Mock redux, thunk and data
 
 test('Should successfully render Details Page and render the ff:', () => {
-  expect(screen.getByText(/Search for what to play next!/i))
+  // HeroMessage component
+  expect(screen.getByText(/Find & Track the best free-to-play games!/))
+  expect(screen.getByText(/Search for what to play next!/))
+
+  // CardContainer component -> Needs to mock redux first
 })
