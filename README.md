@@ -39,6 +39,7 @@ VITE_IMAGE_URL={{Add the API here without the /api}}
   - Lazy loading or Pagination??
   - Better typesafety/TypeScript
   - Better design and responsiveness
+  - Implement the remaining feature/acceptance criteria
   
 - **Any other notes you feel relevant for the evaluation of your solution?**
   - I wished I was given this exam during the weekend. I currently have work as well as a 1-year-old daughter who likes to play with me, so I’m usually busy on weekdays :(
