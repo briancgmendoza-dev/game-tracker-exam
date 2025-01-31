@@ -22,28 +22,27 @@ VITE_EXAM_API_URL={{Add the API here}}
 VITE_IMAGE_URL={{Add the API here without the /api}}
 ```
 
-## Available commands
-1. npm run dev -> to run the project locally.
-2. npm run test -> to run vitest locally.
-3. npm run build -> to build a deployable version of the project.
-4. npm run link -> to check for linting error
-
 ## Answers to questions
-1. What kind of libraries your project is using?
-   a. Axios
-   b. Redux toolkit
-   c. React router dom
-   d. fontawesome icons
-   e. http proxy middleware
-   f. react select
-   g. vite & vitest
-   h. testing library / react
-3. What could you do better in your code next iteration?
-   a. Adding more unit test
-   b. Lazy loading or Pagination ??
-   c. Better typesafe/typescript
-   d. Better design
-5. Any other notes you feel relevant for the evaluation of your solution?
+
+- **What kind of libraries is your project using?**
+  - Axios
+  - Redux toolkit
+  - React router dom
+  - Fontawesome icons
+  - HTTP proxy middleware
+  - React select
+  - Vite & Vitest
+  - Testing library / React
+  
+- **What could you do better in your code next iteration?**
+  - Adding more unit tests
+  - Lazy loading or Pagination??
+  - Better typesafety/TypeScript
+  - Better design and responsiveness
+  
+- **Any other notes you feel relevant for the evaluation of your solution?**
+  - I wished I was given this exam during the weekend. I currently have work as well as a 1-year-old daughter who likes to play with me, so I’m usually busy on weekdays :(
+  - I could've done better and finished the whole thing if I had more time
 
 ## TODO:
 1. Using lazy load images is a plus but not mandatory.
