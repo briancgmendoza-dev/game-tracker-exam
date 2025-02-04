@@ -21,7 +21,7 @@ export default function DetailsPage() {
 
   useEffect(() => {
     dispatch(getGame(params.id ?? ''))
-  }, [params.id])
+  }, [dispatch, params.id])
 
   return (
     <section>

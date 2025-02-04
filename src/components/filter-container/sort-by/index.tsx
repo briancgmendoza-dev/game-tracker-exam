@@ -1,5 +1,4 @@
 import SelectOptions from "../../select-options"
-import Paragraphs from "../../paragraphs"
 
 import { useAppDispatch, useAppSelector } from "../../../store"
 import { setSortBy } from "../../../store/query-slice"

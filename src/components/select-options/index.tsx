@@ -14,11 +14,11 @@ const SelectOptions: React.FC<TSelectOption> = ({ selectorValue, onChange, optio
         options={options}
         placeholder={placeholder}
         styles={{
-          option: (provided: any) => ({
+          option: (provided) => ({
             ...provided,
             color: "#000",
           }),
-          control: (provided: any) => ({
+          control: (provided) => ({
             ...provided,
             width: text === "Filter by Category" ? "250px" : "150px"
           })
